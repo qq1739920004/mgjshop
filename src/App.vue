@@ -1,32 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+	  <keep-alive exclude="detail,nul"> 
+	<router-view></router-view>
+	</keep-alive>
+	<!-- v-show判断当前路由处于哪个界面如果是处于商品详情页面就把底部的选项栏给隐藏 -->
+	<maintab v-show="this.$route.meta.isboottab"></maintab>
   </div>
 </template>
+<script>
+	import maintab from 'components/contend/maintab/maintab.vue'
+	export default {
+		name:'app',
+		components:{
+			maintab
+		}
+	}
+</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style scoped="scoped">
+@import url("assets/css/base.css");
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
