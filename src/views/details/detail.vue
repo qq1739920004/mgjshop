@@ -1,6 +1,6 @@
 <template>
 	<div id='detail'>
-		<detailnavbar ref="denavbar" :class="{navclik:isnav}" class="denavbar" @tpclik='tpclik' ></detailnavbar>
+		<detailnavbar ref="denavbar"  :class="{navclik:isnav}" class="denavbar" @tpclik='tpclik'  @removetimi='removetimi'></detailnavbar>
 		<detailbetterscroll @bootheight='bootheight' ref="detailscroll" :probeType='3' :pullUp='true' class="detaiscroll">
 		<detailswiper class="deswiper" :banner='detailswiperimg' :bannerlength='detailswiperimgleng' :banneritemimageimg='detailswiperimgon' :banneritemimagetailimg='detailswiperimgtail'></detailswiper>
 		<detailgoods :goods='goods'></detailgoods>
@@ -68,7 +68,8 @@
 				te:0,//用于解决商品，参数，评论，推荐四个地方点击时来回跳色的解决方法
 				show:false,
 				message:'',
-				isinterval:0//是否刷新页面高度
+				isinterval:0,//是否刷新页面高度
+        isremovetimi:0//决定是否还让计时器继续刷新数据
 			}
 		},
 		
@@ -148,6 +149,7 @@
 				if(this.isinterval==0)
 				{
 				const timeno=setTimeout(()=>{
+
 					this.topupdate()
 					this.$refs.detailscroll.bscroll.refresh()
 					this.isinterval=0
@@ -196,14 +198,24 @@
 					this.$toast.show(res)
 				})
 			},
+      //删除所有定时器
+      removetimi(){
+        this.isremovetimi=1
+      }
+      
 			
 			
 			
 			
 		},
 		created() {
+      
+      this.isremovetimi=0
+      
 			const timeno=setInterval(()=>{
+        if(this.isremovetimi==0){
 				this.topupdate()
+        }
 			},100)
 			setTimeout(()=>{
 				clearInterval(timeno)

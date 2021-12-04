@@ -5,7 +5,7 @@
 			<!-- 首页顶部 -->
 			<div slot='cent'>购物街</div>
 		</navbar>
-		<catgorysmall@click.native='tpcatgorysmall' ref="catgorysmall1" class="myrool" :key="1"
+		<catgorysmall @click.native='tpcatgorysmall' ref="catgorysmall1" class="myrool" :key="1"
 			:title="['流行','新款','精选']" @switchcategory='switchtype' v-show="iscatgorysmall">
 			</catgorysmall><!-- 超过顶部多少距离补上去的catgorysmall吸顶效果-->
 			<scroll class="scr" ref="scr" @bootheight='bootheight' :probeType='3' :pullUp='true' @pullingup='pullingup'>

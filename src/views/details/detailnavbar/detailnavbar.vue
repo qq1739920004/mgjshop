@@ -7,7 +7,7 @@
 			</div>
 		</div>
 		<div slot='cent' class="centnav">
-			<div v-for="(item,index) in title" class="centnavitem" :class="{aticl:index==isaticl}" @click="isaticladd(index)">
+			<div v-for="(item,index) in title" class="centnavitem" :class="{aticl:index==isaticl}" @click="isaticladd(index)" :key="index">
 				{{item}}
 			</div>
 		</div>
@@ -35,6 +35,7 @@
 			},
 			leftback(){
 				this.$router.back()
+        	this.$emit('removetimi')
 			}
 		}
 	}

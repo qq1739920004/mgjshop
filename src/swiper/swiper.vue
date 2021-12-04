@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<ul class="whiteradio" ref="swiperli">
-			<li v-for="(item,index) in banner" :id="index==ind ? 'black' : ''" @touchstart='blackradius(index)'
+			<li v-for="(item,index) in banner" :id="index==ind ? 'black' : ''" :key=index @touchstart='blackradius(index)'
 				@touchend='end()'></li>
 		</ul>
 

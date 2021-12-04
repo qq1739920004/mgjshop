@@ -1,7 +1,7 @@
 <template>
 	<div class="goodslistitem" @click="detail">
 		<div class="goodslistitemli">
-			<img v-lazy="goodsimage" >
+			<img v-lazy="goodsimage"  @load="imgload()">
 			<div class="goodslistitemtitle">
 			<p>{{goodslist.title}}</p>
 			<div class="goodslistitemspan">
@@ -44,7 +44,12 @@
 					this.$router.push('/null')
 				}
 				}
-			}
+			},
+      //img加载完成触发的事件总线
+      imgload(){
+        this.$bus.$emit('imgload');
+      }
+
 		},
 		computed:{
 			goodsimage(){

@@ -3,7 +3,6 @@
 	<div class="goodslisti">
 		<goodslistitem v-for="(item,index) in goods" :key="index" :goodslist="item"></goodslistitem></div>
 	</div>
-	</div>
 </template>
 
 <script>

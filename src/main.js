@@ -9,6 +9,7 @@ import VueLazyload from 'vue-lazyload'//图片懒加载插件
 Vue.config.productionTip = false
 Vue.use(toast)
 Vue.use(VueLazyload)
+Vue.prototype.$bus=new Vue()
 FastClick.attach(document.body)
 new Vue({
   router,
