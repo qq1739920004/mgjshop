@@ -32,7 +32,7 @@
 	import goodslist from 'components/contend/home/home-/goods/goodslist.vue'//商品的推荐数据
 	import boottomnav from 'views/details/detailboottomnavbar/boottomnav.vue'//底部导航栏
 	import {mixintp} from 'common/mixin.js'//混入返回顶部标签
-	import toast from 'components/common/toast/toast.vue'
+	import toast from 'components/common/toast/toast.vue'//点击加入购物车会在屏幕中间显示的小字条
 	export default{
 		name:'detail',
 		components:{

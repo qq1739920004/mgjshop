@@ -29,7 +29,9 @@ export default {
       default() {
         return {};
       },
+      
     },
+    
   },
 
   methods: {
@@ -41,7 +43,14 @@ export default {
       this.$store.commit("add", this.list);
     },
     reduce() {
-      this.$store.commit("reduce", this.list);
+      
+      // if(this.list.count<=0){
+      //   console.log("别点了！！！");
+     
+      // }
+      // else{
+        this.$store.commit("reduce", this.list);
+      // }
     },
   },
 };

@@ -9,6 +9,7 @@
         v-for="(item, index) in cartList"
         :key="index"
         :list="cartList[index]"
+        
       ></shopList>
     </shopscroll>
     <boottomnav></boottomnav>

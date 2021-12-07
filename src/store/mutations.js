@@ -1,14 +1,14 @@
 export default {
 	addsum(state,num){
 		 num.count+=1
-	console.log(state.cartlist);
+	// console.log(state.cartlist);
 	  },
 	  addexistence(state,num){
 		  state.cartlist.push(num)
 		  // console.log(state.cartlist);
 	  },
 	  //增加商品数量
-	  add(state,list){
+	  add(state,list){//list是那个购物车商品标题价格之类的数据对象
 		const index=state.cartlist.indexOf(list)
 		state.cartlist[index].count+=1
 	  },
@@ -16,6 +16,10 @@ export default {
 	  reduce(state,list){
 		  const index=state.cartlist.indexOf(list)
 		  state.cartlist[index].count-=1
+      if(state.cartlist[index].count<0){
+        state.cartlist.splice(index,1)
+        console.log(state.cartlist);
+      }
 	  },
 	  //全选按钮点击触发
 	  reverse(state){
