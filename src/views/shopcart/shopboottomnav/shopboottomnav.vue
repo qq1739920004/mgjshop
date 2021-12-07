@@ -63,19 +63,19 @@
 
 <style scoped="scoped">
 	#boottomnav{
-		height: 40px;
+		height: 50px;
 		display: flex;
 		justify-content: space-between;
 		background-color: #f4f6f7;
 		position: relative;
-		bottom: 59px;
+		bottom:0px;
 		font-size: 18px;
 	}
 	
 	.truediv{
 		margin-left: 15px;
-		height: 40px;
-		line-height: 40px;
+		height: 50px;
+		line-height: 50px;
 		display: flex;
 	}
 	.truediv img{
@@ -83,7 +83,7 @@
 		border-radius: 50%;
 		width: 20px;
 		height: 20px;
-		margin-top: 10px;
+		margin-top: 15px;
 		margin-right: 5px;
 	}
 	.sum{
@@ -92,7 +92,7 @@
 	.countsum{
 		text-align: center;
 		width: 120px;
-		line-height: 40px;
+		line-height: 50px;
 		background-color: #ff7559;
 	}
 	.issumpink{
